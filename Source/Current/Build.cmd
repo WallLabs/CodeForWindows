@@ -1,18 +1,27 @@
 @echo off
 setlocal
+echo Build
+echo =======
+echo.
+echo Performs a build of one configuration then copies the output
+echo to a solution local build directory, ready for release.
+echo.
 
-rem *** Syntax
+rem * Check syntax
 if "%~1" == "" (
 	echo Configuration name parameter is required.
+	endlocal
 	exit /b 1
 )
 set ConfigurationName=%~1
 
-echo %ConfigurationName% Build
 echo.
-echo Performs a %ConfigurationName% build then copies the output
-echo into a solution local "%ConfigurationName%" subdirectory.
+echo %ConfigurationName% Build...
+
 echo.
+echo Initializing Visual Studio environment...
+call "%~dp0Scripts\Variables.cmd"
+if %errorlevel% neq 0 goto Error
 
 echo.
 echo Delete old files...
@@ -28,7 +37,12 @@ if %errorlevel% neq 0 goto error
 
 echo.
 echo Copying PowerShell modules...
-robocopy "%~dp0PowerShell" "%~dp0%ConfigurationName%\PowerShell"
+robocopy "%~dp0PowerShell" "%~dp0%ConfigurationName%\PowerShell" /s *.psm1 *.psd1
+if %errorlevel% gtr 7 goto error
+
+echo.
+echo Copying scripts...
+robocopy "%~dp0Scripts" "%~dp0%ConfigurationName%\Scripts"
 if %errorlevel% gtr 7 goto error
 
 echo.
@@ -48,8 +62,7 @@ echo %ConfigurationName% build successful.
 endlocal
 exit /b 0
 
-:error
-set result=%errorlevel%
-echo.
-echo Error %result%
-exit /b %result%
+:Error
+echo Error %errorlevel%!
+endlocal
+exit /b 1
