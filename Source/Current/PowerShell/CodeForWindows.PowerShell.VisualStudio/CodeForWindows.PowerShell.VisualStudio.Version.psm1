@@ -145,7 +145,7 @@ function Set-VersionInSqlDatabaseProject([String]$File, [Version]$Version)
 }
 
 [CmdletBinding]
-function Set-VersionInWindowsUniversalPackageManifest([String]$File, [Version]$Version)
+function Set-VersionInAppXManifest([String]$File, [Version]$Version)
 {
 	Write-Host("Setting version in Windows Universal package manifest file " + $File)
 
