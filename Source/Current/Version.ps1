@@ -21,7 +21,6 @@ $WarningPreference = "Stop"       # All warnings stop program
 # Modules
 # ------------------------------------------------------------------------------
 
-
 # Initialize module paths
 $env:PSModulePath = [Environment]::GetEnvironmentVariable("PSModulePath", "Machine");
 $env:PSModulePath = "$env:PSModulePath;$PSScriptRoot\PowerShell";
