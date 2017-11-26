@@ -31,6 +31,7 @@
   <ItemGroup>
     <Content Include="Data\Version.txt" />
     <Content Include="Data\Visual Studio XML Project.xml" />
+    <Content Include="Data\Windows Universal Package Manifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeForWindows.PowerShell.VisualStudio.Version.tests.ps1" />

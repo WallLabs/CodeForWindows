@@ -6,6 +6,7 @@ $WarningPreference = "Stop";       # All warnings stop program
 
 # Initialize
 & "$PSScriptRoot\Setup.ps1";
+$targetDirectory = "$PSScriptRoot\bin";
 
 # Tests
 Describe "Tests" {
@@ -44,6 +45,16 @@ Describe "Tests" {
         # Read back and verify
         [Version]$version = Get-VersionFile $filePath;
         $version | Should Be $expectedVersion;
+    }
+
+    It 'VisualStudio.Version Set-VersionInWindowsUniversalPackageManifest' {
+
+        # Constants
+        [string]$filePath = "$targetDirectory\Data\Windows Universal Package Manifest.xml";
+        [Version]$newVersion = New-Object -TypeName 'System.Version' -ArgumentList 7, 8, 9900, 11222;
+
+        # Call test method to write version file
+        Set-VersionInWindowsUniversalPackageManifest -File $filePath -Version $newVersion;
     }
 
     It 'VisualStudio.Version Set-VersionInXmlProject' {
