@@ -42,7 +42,7 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="CodeForWindows.PowerShell.VisualStudio.psd1" />
-    <Compile Include="CodeForWindows.PowerShell.VisualStudio.Version.psm1" />
+    <Compile Include="Version.psm1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

@@ -76,6 +76,22 @@ function Set-VersionFile([String]$File, [Version]$Version)
 }
 
 [CmdletBinding]
+function Set-VersionInAppXManifest([String]$File, [Version]$Version)
+{
+	Write-Host("Setting version in Windows Universal package manifest file " + $File)
+
+	# Load file
+	$contents = [xml][System.IO.File]::ReadAllText($File)
+
+	# Find and replace manifest version
+	$versionElement = $contents.SelectSingleNode("/node()[name() = 'Package']/node()[name() = 'Identity']/@Version");
+	if ($versionElement -ne $null) { $versionElement.Value = $Version.ToString(); }
+
+	# Save changes
+	[System.IO.File]::WriteAllText($File, $contents.OuterXml)
+}
+
+[CmdletBinding]
 function Set-VersionInAssemblyInfo([String]$File, [Version]$Version)
 {
 	Write-Host("Setting version in assembly info file " + $File)
@@ -142,22 +158,6 @@ function Set-VersionInSqlDatabaseProject([String]$File, [Version]$Version)
 	$contents = [System.IO.File]::ReadAllText($File)
 	$contents = [RegEx]::Replace($contents, "(<DacVersion>)(?:\d+\.\d+\.\d+\.\d+)(</DacVersion>)",("`${1}" + $Version.ToString() + "`${2}"))
 	[System.IO.File]::WriteAllText($File, $contents)
-}
-
-[CmdletBinding]
-function Set-VersionInAppXManifest([String]$File, [Version]$Version)
-{
-	Write-Host("Setting version in Windows Universal package manifest file " + $File)
-
-	# Load file
-	$contents = [xml][System.IO.File]::ReadAllText($File)
-
-	# Find and replace manifest version
-	$versionElement = $contents.SelectSingleNode("/node()[name() = 'Package']/node()[name() = 'Identity']/@Version");
-	if ($versionElement -ne $null) { $versionElement.Value = $Version.ToString(); }
-
-	# Save changes
-	[System.IO.File]::WriteAllText($File, $contents.OuterXml)
 }
 
 [CmdletBinding]
