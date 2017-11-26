@@ -145,6 +145,22 @@ function Set-VersionInSqlDatabaseProject([String]$File, [Version]$Version)
 }
 
 [CmdletBinding]
+function Set-VersionInWindowsUniversalPackageManifest([String]$File, [Version]$Version)
+{
+	Write-Host("Setting version in Windows Universal package manifest file " + $File)
+
+	# Load file
+	$contents = [xml][System.IO.File]::ReadAllText($File)
+
+	# Find and replace manifest version
+	$versionElement = $contents.SelectSingleNode("/node()[name() = 'Package']/node()[name() = 'Identity']/@Version");
+	if ($versionElement -ne $null) { $versionElement.Value = $Version.ToString(); }
+
+	# Save changes
+	[System.IO.File]::WriteAllText($File, $contents.OuterXml)
+}
+
+[CmdletBinding]
 function Set-VersionInWixGlobal([String]$File, [Version]$Version)
 {
 	Write-Host("Setting version in WIX global file " + $File)
