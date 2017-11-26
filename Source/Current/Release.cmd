@@ -13,6 +13,13 @@ call "%~dp0Scripts\Variables.cmd"
 if %errorlevel% neq 0 goto Error
 
 echo.
+echo Clean any previous builds...
+if exist "%~dp0Debug" rmdir "%~dp0Debug" /s /q
+if %errorlevel% neq 0 goto Error
+if exist "%~dp0Release" rmdir "%~dp0Release" /s /q
+if %errorlevel% neq 0 goto Error
+
+echo.
 echo Update source (and delete extra files)...
 rem * TODO: Replace TFS commands with GIT equivalent
 rem tf undo "%~dp0..\..\Build\v1" /recursive /noprompt
@@ -31,14 +38,15 @@ if %errorlevel% neq 0 goto Error
 
 echo.
 echo Building...
-call "%~dp0Build.cmd" Debug
-if %errorlevel% neq 0 goto Error
+rem * No debug build at this time (same as release).
+rem call "%~dp0Build.cmd" Debug
+rem if %errorlevel% neq 0 goto Error
 call "%~dp0Build.cmd" Release
 if %errorlevel% neq 0 goto Error
 
-echo.
-echo Delete old build directory so that old or renamed items are cleaned
 if not exist "%~dp0..\..\Build\v1" goto TargetClean
+echo.
+echo Delete old build directory so that old or renamed items are cleaned...
 rem * TODO: Replace TFS commands with GIT equivalent
 rem tf delete "%~dp0..\..\Build\v1" /recursive
 rem if %errorlevel% gtr 1 goto Error
@@ -50,8 +58,9 @@ rem if %errorlevel% gtr 1 goto Error
 
 echo.
 echo Copying output to build directory...
-robocopy "%~dp0Debug" "%~dp0..\..\Build\v1\Debug" /s
-if %errorlevel% gtr 7 goto Error
+rem * No debug build at this time (same as release).
+rem robocopy "%~dp0Debug" "%~dp0..\..\Build\v1\Debug" /s
+rem if %errorlevel% gtr 7 goto Error
 robocopy "%~dp0Release" "%~dp0..\..\Build\v1\Release" /s
 if %errorlevel% gtr 7 goto Error
 
