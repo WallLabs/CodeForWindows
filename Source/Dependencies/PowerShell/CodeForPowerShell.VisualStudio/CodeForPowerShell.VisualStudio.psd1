@@ -1,6 +1,6 @@
 @{
     RootModule = ''
-    ModuleVersion = '1.0.1807.21001'
+    ModuleVersion = '1.0.1807.21009'
     GUID = '5042A6BA-039F-4C87-97C9-7B12CCA1D532'
     Author = 'Wall Labs'
     CompanyName = 'Wall Labs'
@@ -10,7 +10,7 @@
     DotNetFrameworkVersion = '4.0'
     CLRVersion = '4.0'
     ModuleList = @()
-    NestedModules = @('Version.psm1')
+    NestedModules = @('CodeForPowerShell.VisualStudio.Version.psm1')
     FunctionsToExport = '*'
     CmdletsToExport = '*'
     VariablesToExport = '*'
