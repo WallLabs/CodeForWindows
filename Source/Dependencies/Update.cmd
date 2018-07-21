@@ -23,7 +23,7 @@ echo Copying dependencies...
 robocopy "%~dp0Temp\CodeForPowerShell\Build\Modules\CodeForPowerShell.VisualStudio" "%~dp0PowerShell\CodeForPowerShell.VisualStudio" /s /purge
 if %errorlevel% gtr 7 goto Error
 copy "%~dp0Temp\CodeForPowerShell\Build\Documentation\Release Notes.md" "%~dp0Code for PowerShell Release Notes.md" /y
-if %errorlevel% gtr 7 goto Error
+if %errorlevel% neq 0 goto Error
 robocopy "%~dp0Temp\CodeForPowerShell\Build\Version" "%~dp0." *.Version.txt
 if %errorlevel% gtr 7 goto Error
 attrib "%~dp0*" -r /s
