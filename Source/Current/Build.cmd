@@ -42,8 +42,8 @@ if %errorlevel% gtr 7 goto error
 
 echo.
 echo Copying scripts...
-robocopy "%~dp0Scripts" "%~dp0%ConfigurationName%\Scripts"
-if %errorlevel% gtr 7 goto error
+robocopy "%~dp0Scripts" "%~dp0%ConfigurationName%\Scripts\Visual Studio" Variables.cmd
+if %errorlevel% gtr 7 goto Error
 
 echo.
 echo Copying documentation...
