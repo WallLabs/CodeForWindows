@@ -1,0 +1,7 @@
+# =============================================================================
+# Repository Root Git Ignore
+# =============================================================================
+
+# Ignore repository source control cache/options directories for Git and editors.
+.git/
+.vs/

@@ -1,6 +1,0 @@
-﻿# Solution Root Git Ignore
-# ========================
-# Requires VisualStudio.gitignore in same directory.
-
-# Ignore solution specific files.
-/Temp/
