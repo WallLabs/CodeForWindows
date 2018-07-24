@@ -5,13 +5,14 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0EA815E-E26F-42ED-8E54-CE52BCF90D14}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
 		Build.cmd = Build.cmd
 		NuGet.config = NuGet.config
 		Release.cmd = Release.cmd
+		Solution.gitignore = Solution.gitignore
 		Version.cmd = Version.cmd
 		Version.ps1 = Version.ps1
 		Version.txt = Version.txt
+		VisualStudio.gitignore = VisualStudio.gitignore
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{9FA8F633-0F1F-4605-9C0D-47C627144A26}"
@@ -29,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencie
 		Dependencies\Code for PowerShell Release Notes.md = Dependencies\Code for PowerShell Release Notes.md
 		Dependencies\CodeForPowerShell.Version.txt = Dependencies\CodeForPowerShell.Version.txt
 		Dependencies\Update.cmd = Dependencies\Update.cmd
+		Dependencies\Variables.cmd = Dependencies\Variables.cmd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{6245DF64-6981-4E23-B7EC-7A308F97A9C2}"
