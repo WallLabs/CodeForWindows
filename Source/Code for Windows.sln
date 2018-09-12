@@ -30,7 +30,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencie
 		Dependencies\Code for PowerShell Release Notes.md = Dependencies\Code for PowerShell Release Notes.md
 		Dependencies\CodeForPowerShell.Version.txt = Dependencies\CodeForPowerShell.Version.txt
 		Dependencies\Update.cmd = Dependencies\Update.cmd
-		Dependencies\Variables.cmd = Dependencies\Variables.cmd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{6245DF64-6981-4E23-B7EC-7A308F97A9C2}"
