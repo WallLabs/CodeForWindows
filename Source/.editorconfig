@@ -1,0 +1,14 @@
+# Standard Editor Configuration (see https://EditorConfig.org)
+# Suppress: EC103
+
+# Root configuration.
+root = true
+
+# Common.
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = off

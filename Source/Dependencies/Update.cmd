@@ -35,7 +35,6 @@ if %errorlevel% neq 0 goto Error
 
 echo.
 echo Calling version script to update references...
-echo..
 call "%~dp0..\Version.cmd"
 if %errorlevel% neq 0 goto Error
 
@@ -51,7 +50,5 @@ exit /b 0
 
 :Error
 echo Error %errorlevel%!
-echo.
-echo Note: Visual Studio must be closed before running this script to prevent build errors from locked files and caches.
 endlocal
 exit /b 1

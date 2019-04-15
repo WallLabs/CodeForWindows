@@ -41,6 +41,11 @@ robocopy "%~dp0Scripts" "%~dp0Temp\Build\%ConfigurationName%\Scripts\Visual Stud
 if %errorlevel% gtr 7 goto Error
 
 echo.
+echo Copying settings...
+robocopy "%~dp0." "%~dp0Temp\Build\%ConfigurationName%\Settings\Visual Studio" .editorconfig CodeMaid.config
+if %errorlevel% gtr 7 goto Error
+
+echo.
 echo Copying documentation...
 robocopy "%~dp0Documentation" "%~dp0Temp\Build\%ConfigurationName%\Documentation"
 if %errorlevel% gtr 7 goto error
