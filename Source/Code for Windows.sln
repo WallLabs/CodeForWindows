@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visual Studio", "Visual Stu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{146DEE06-D4D8-48F5-9849-0E77DCCF71CD}"
 	ProjectSection(SolutionItems) = preProject
+		Dependencies\.gitignore = Dependencies\.gitignore
 		Dependencies\Update.cmd = Dependencies\Update.cmd
 	EndProjectSection
 EndProject
