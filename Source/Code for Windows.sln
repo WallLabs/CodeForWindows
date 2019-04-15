@@ -22,15 +22,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Documentation\Release Notes.md = Documentation\Release Notes.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{E42AD782-6D8D-4ACD-BB6D-26870E7BF9CE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visual Studio", "Visual Studio", "{E42AD782-6D8D-4ACD-BB6D-26870E7BF9CE}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\Variables.cmd = Scripts\Variables.cmd
+		Visual Studio\Variables.cmd = Visual Studio\Variables.cmd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{146DEE06-D4D8-48F5-9849-0E77DCCF71CD}"
 	ProjectSection(SolutionItems) = preProject
-		Dependencies\Code for PowerShell Release Notes.md = Dependencies\Code for PowerShell Release Notes.md
-		Dependencies\CodeForPowerShell.Version.txt = Dependencies\CodeForPowerShell.Version.txt
 		Dependencies\Update.cmd = Dependencies\Update.cmd
 	EndProjectSection
 EndProject
@@ -42,6 +40,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeForPowerShell.VisualStu
 		Dependencies\PowerShell\CodeForPowerShell.VisualStudio\CodeForPowerShell.VisualStudio.Version.psm1 = Dependencies\PowerShell\CodeForPowerShell.VisualStudio\CodeForPowerShell.VisualStudio.Version.psm1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Version", "Version", "{9F2D7509-398E-4432-A7A4-985E848D47D4}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Version\CodeForPowerShell.Version.txt = Dependencies\Version\CodeForPowerShell.Version.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{FE3D848B-AF14-4527-9F99-8606C8E1A6F6}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Documentation\Code for PowerShell Release Notes.md = Dependencies\Documentation\Code for PowerShell Release Notes.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +57,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6245DF64-6981-4E23-B7EC-7A308F97A9C2} = {146DEE06-D4D8-48F5-9849-0E77DCCF71CD}
 		{F7C492E8-0347-47C2-87D7-5CED73B0A362} = {6245DF64-6981-4E23-B7EC-7A308F97A9C2}
+		{9F2D7509-398E-4432-A7A4-985E848D47D4} = {146DEE06-D4D8-48F5-9849-0E77DCCF71CD}
+		{FE3D848B-AF14-4527-9F99-8606C8E1A6F6} = {146DEE06-D4D8-48F5-9849-0E77DCCF71CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CF2D7C1-084C-4B81-AA2A-FF0C2FBF23F6}

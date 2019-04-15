@@ -20,7 +20,7 @@ echo %ConfigurationName% Build...
 
 echo.
 echo Initializing Visual Studio environment...
-call "%~dp0Scripts\Variables.cmd"
+call "%~dp0Visual Studio\Variables.cmd"
 if %errorlevel% neq 0 goto Error
 
 echo.
@@ -37,12 +37,12 @@ if %errorlevel% neq 0 goto error
 
 echo.
 echo Copying scripts...
-robocopy "%~dp0Scripts" "%~dp0Temp\Build\%ConfigurationName%\Scripts\Visual Studio" Variables.cmd
+robocopy "%~dp0Visual Studio" "%~dp0Temp\Build\%ConfigurationName%\Visual Studio" Variables.cmd
 if %errorlevel% gtr 7 goto Error
 
 echo.
 echo Copying settings...
-robocopy "%~dp0." "%~dp0Temp\Build\%ConfigurationName%\Settings\Visual Studio" .editorconfig CodeMaid.config
+robocopy "%~dp0." "%~dp0Temp\Build\%ConfigurationName%\Visual Studio" .editorconfig CodeMaid.config
 if %errorlevel% gtr 7 goto Error
 
 echo.

@@ -13,7 +13,7 @@ pause
 
 echo.
 echo Initializing Visual Studio environment...
-call "%~dp0Scripts\Variables.cmd"
+call "%~dp0Visual Studio\Variables.cmd"
 if %errorlevel% neq 0 goto Error
 
 echo.
