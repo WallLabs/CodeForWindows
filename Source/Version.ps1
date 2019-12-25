@@ -35,12 +35,12 @@ Write-Output "Build is set to the UTC year and month in ""yyMM"" format.";
 Write-Output "Revision is set to the UTC day * 1000 plus a three digit incrementing number.";
 Write-Output "";
 
-# Load current version file
+# Load current version file.
 $versionFilePath = "$PSScriptRoot\Version.txt";
 $version = Get-VersionFile -File $versionFilePath;
 Write-Host ("Old Version: " + $version.ToString());
 
-# Update version and save
+# Update version and save.
 $newVersion = Update-Version -Version $version;
 Write-Host ("New Version: " + $newVersion.ToString());
 Set-VersionFile -File $versionFilePath -Version $newVersion;
@@ -48,7 +48,7 @@ Set-VersionFile -File $versionFilePath -Version $newVersion;
 # Set version in Visual Studio project and source files...
 # TODO: Version projects and other files when present...
 
-# Exit successful
+# Exit successful.
 Exit 0;
 
 #endregion
