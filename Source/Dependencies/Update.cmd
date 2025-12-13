@@ -4,11 +4,6 @@ echo Update Dependencies
 echo ===================
 echo.
 echo Updates dependencies with the current checked-in build version.
-echo.
-
-echo.
-echo Close Visual Studio now to avoid errors with locked files.
-pause
 
 echo.
 echo Initializing Visual Studio environment...
@@ -22,6 +17,11 @@ if exist "%~dp0Temp" (
     if %errorlevel% gtr 1 goto Error
 )
 git clone --branch=master https://github.com/WallLabs/CodeForPowerShell.git "%~dp0Temp\CodeForPowerShell"
+if %errorlevel% neq 0 goto Error
+
+echo.
+echo Removing any read-only attributes.
+attrib "%~dp0Temp\*" -r /s
 if %errorlevel% neq 0 goto Error
 
 echo.

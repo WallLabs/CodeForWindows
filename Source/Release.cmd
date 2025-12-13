@@ -8,10 +8,6 @@ echo to the central build directory for check-in and use by other
 echo components or release.
 
 echo.
-echo Close Visual Studio now to avoid errors with locked files.
-pause
-
-echo.
 echo Initializing Visual Studio environment...
 call "%~dp0Visual Studio\Variables.cmd"
 if %errorlevel% neq 0 goto Error

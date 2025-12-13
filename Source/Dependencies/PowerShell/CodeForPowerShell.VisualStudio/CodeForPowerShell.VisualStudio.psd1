@@ -1,6 +1,6 @@
 @{
 	RootModule = ''
-	ModuleVersion = '1.0.1904.15000'
+	ModuleVersion = '1.0.1904.15002'
 	GUID = '5042A6BA-039F-4C87-97C9-7B12CCA1D532'
 	Author = 'Wall Labs'
 	CompanyName = 'Wall Labs'
