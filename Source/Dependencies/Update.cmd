@@ -21,7 +21,7 @@ if exist "%~dp0Temp" (
     rmdir "%~dp0Temp" /s /q
     if %errorlevel% gtr 1 goto Error
 )
-git clone --branch=master git://github.com/WallLabs/CodeForPowerShell "%~dp0Temp\CodeForPowerShell"
+git clone --branch=master https://github.com/WallLabs/CodeForPowerShell.git "%~dp0Temp\CodeForPowerShell"
 if %errorlevel% neq 0 goto Error
 
 echo.

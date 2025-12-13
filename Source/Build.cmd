@@ -32,7 +32,7 @@ if exist "%~dp0Temp\Build\%ConfigurationName%" (
 
 echo.
 echo Compiling %ConfigurationName% build...
-msbuild "%~dp0Code for Windows.sln" /p:Configuration=%ConfigurationName%
+msbuild "%~dp0Code for Windows.slnx" /p:Configuration=%ConfigurationName%
 if %errorlevel% neq 0 goto error
 
 echo.
@@ -42,7 +42,7 @@ if %errorlevel% gtr 7 goto Error
 
 echo.
 echo Copying settings...
-robocopy "%~dp0." "%~dp0Temp\Build\%ConfigurationName%\Visual Studio" .editorconfig CodeMaid.config
+robocopy "%~dp0." "%~dp0Temp\Build\%ConfigurationName%\Visual Studio" .editorconfig
 if %errorlevel% gtr 7 goto Error
 
 echo.

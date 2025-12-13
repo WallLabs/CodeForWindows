@@ -1,0 +1,32 @@
+<Solution>
+  <Folder Name="/Dependencies/">
+    <File Path="Dependencies/.gitignore" />
+    <File Path="Dependencies/Update.cmd" />
+  </Folder>
+  <Folder Name="/Dependencies/Documentation/">
+    <File Path="Dependencies/Documentation/Code for PowerShell Release Notes.md" />
+  </Folder>
+  <Folder Name="/Dependencies/PowerShell/" />
+  <Folder Name="/Dependencies/PowerShell/CodeForPowerShell.VisualStudio/">
+    <File Path="Dependencies/PowerShell/CodeForPowerShell.VisualStudio/CodeForPowerShell.VisualStudio.psd1" />
+    <File Path="Dependencies/PowerShell/CodeForPowerShell.VisualStudio/CodeForPowerShell.VisualStudio.Version.psm1" />
+  </Folder>
+  <Folder Name="/Dependencies/Version/">
+    <File Path="Dependencies/Version/CodeForPowerShell.Version.txt" />
+  </Folder>
+  <Folder Name="/Documentation/">
+    <File Path="Documentation/Release Notes.md" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Build.cmd" />
+    <File Path="NuGet.config" />
+    <File Path="Release.cmd" />
+    <File Path="Version.cmd" />
+    <File Path="Version.ps1" />
+    <File Path="Version.txt" />
+  </Folder>
+  <Folder Name="/Visual Studio/">
+    <File Path="Visual Studio/Variables.cmd" />
+  </Folder>
+</Solution>
